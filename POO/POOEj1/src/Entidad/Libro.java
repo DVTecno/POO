@@ -33,10 +33,12 @@ public class Libro {
     }
 
     public void mostrarLibro() {
+        System.out.println("-----------------------------------------");
         System.out.println("El título del libro es: " + titulo);
         System.out.println("El autor del libro es: " + autor);
         System.out.println("El ISBN del libro es: " + ISBN);
         System.out.println("La cantidad de páginas del libro son: " + numeroDePagina);
+        System.out.println("-----------------------------------------");
 
     }
 
