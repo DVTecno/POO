@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Biblioteca {
 
     public static void main(String[] args) {
-       
+       Scanner leer = new Scanner(System.in);
         Libro libro1 = new Libro();
 
         libro1.cargarLibro();
