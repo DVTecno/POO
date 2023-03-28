@@ -19,6 +19,6 @@ public class Biblioteca {
         
         libro1.cargarLibro();
         libro1.mostrarLibro();
-        System.out.println("Hola");
+       
     }
 }
