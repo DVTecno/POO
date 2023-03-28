@@ -1,6 +1,7 @@
 package biblioteca;
 
 import Entidad.Libro;
+import java.util.Scanner;
 
 /**
  * "Ficciones" de Jorge Luis Borges. ISBN: 9789877380874. 150 páginas. "El
@@ -13,12 +14,11 @@ import Entidad.Libro;
 public class Biblioteca {
 
     public static void main(String[] args) {
-
+        Scanner leer = new Scanner(System.in);
         Libro libro1 = new Libro();
-        
-        
+
         libro1.cargarLibro();
         libro1.mostrarLibro();
-       
+
     }
 }
