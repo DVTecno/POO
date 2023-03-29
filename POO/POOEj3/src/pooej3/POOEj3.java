@@ -28,10 +28,7 @@ public class POOEj3 {
         Operacion op1 = new Operacion(50, 2);
 
         op.crearOperacion();
-        //op.suma();
-        //op.resta();
-        //op.multipilcacion();
-        //op.division();
+
         System.out.println("Número ingresado por usuario");
         System.out.println("el resultado de la suma de los números ingresados es: " + op.suma());
         System.out.println("el resultado de la resta de los números ingresados es: " + op.resta());
