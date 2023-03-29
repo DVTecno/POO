@@ -2,13 +2,24 @@ package Entidad;
 
 import java.util.Scanner;
 
+/**
+ * Crear una clase llamada Libro que contenga los siguientes atributos: ISBN,
+ * Título, Autor, Número de páginas, y un constructor con todos los atributos
+ * pasados por parámetro y un constructor vacío. Crear un método para cargar un
+ * libro pidiendo los datos al usuario y luego informar mediante otro método el
+ * número de ISBN, el título, el autor del libro y el número de páginas.
+ *
+ * @author veras
+ */
 public class Libro {
 //  Atributos
+
     public String ISBN;
     public String titulo;
     public String autor;
     public int numeroDePagina;
 //  Contrutor
+
     public Libro() {
     }
 
@@ -19,6 +30,7 @@ public class Libro {
         this.numeroDePagina = numeroDePagina;
     }
 //  Metodos
+
     public void cargarLibro() {
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese el nombre del libro");

@@ -1,6 +1,6 @@
 package pooej2;
 
-import Circunferencia.Circunferencia;
+import Entidad.Circunferencia;
 
 public class POOEj2 {
 
