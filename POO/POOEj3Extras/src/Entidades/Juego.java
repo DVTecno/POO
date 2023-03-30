@@ -30,7 +30,9 @@ public class Juego {
     public void iniciarJuego() {
         Scanner leer = new Scanner(System.in);
 
-        while (true) {
+        boolean repetirJuego = true;
+
+        while (repetirJuego) {
             System.out.print("Ingrese el numero Adivinar: ");
             numeroSecreto = leer.nextInt();
             int intentos = 0;
@@ -56,7 +58,16 @@ public class Juego {
                 System.out.println("No encontraste el numero en " + numeroIntentos + " intentos");
                 jugador1Ganadas++;
             }
-
+              System.out.println("--------------------------------------------");
+            System.out.print("Quiere volver a jugar? si-no ");
+            String respuesta = leer.next();
+            if (!respuesta.equalsIgnoreCase("si")) {
+                repetirJuego = false;
+            }
+            System.out.println("--------------------------------------------");
+            System.out.println("Jugador 1 gano " + jugador1Ganadas + " veces");
+            System.out.println("Jugador 2 gano " + jugador2Ganadas + " veces");
+            System.out.println("--------------------------------------------");
         }
 
     }
