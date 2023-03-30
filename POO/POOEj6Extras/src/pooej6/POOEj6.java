@@ -1,12 +1,24 @@
 package pooej6;
 
-import Entidades.Puntos;
+import Entidades.Cuenta;
+import java.util.Scanner;
 
 public class POOEj6 {
 
     public static void main(String[] args) {
-        Puntos punto1 = new Puntos().crearPuntos();
-        System.out.println(Puntos.Distancia(punto1));
+        
+        Scanner leer = new Scanner(System.in);
+        
+        System.out.println("Crearemos una nueva cuenta:");
+        Cuenta cuenta = new Cuenta().crearCuenta();
+        System.out.println("Desea retirar dinero?  si/no");
+        String respuesta = leer.next();
+        if (respuesta.equalsIgnoreCase("si")) {
+            cuenta.retirarDinero(cuenta);
+            System.out.println(cuenta.toString());
+        } else {
+            System.out.println("Gracias por utizar el servicio!");
+        }
 
     }
 
