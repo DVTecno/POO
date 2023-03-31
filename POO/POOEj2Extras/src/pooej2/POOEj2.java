@@ -19,8 +19,8 @@ public class POOEj2 {
     public static void main(String[] args) {
         Puntos punto1 = new Puntos();
         punto1.crearPuntos();
-        double distancia = punto1.distancia();
-        System.out.println("La distancia entre los puntos es: " + distancia);
+        
+        System.out.println("La distancia entre los puntos es: " + punto1.distancia());
         //3, 4, 6, 8 = 5.0
     }
 }

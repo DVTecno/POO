@@ -76,8 +76,9 @@ public class Puntos {
     }
 
     public double distancia() {
-        double distancia;
-        distancia = Math.sqrt(Math.pow(this.x2 - this.x1, 2) + Math.pow(this.y2 - this.y1, 2));
-        return distancia;
+        double dist = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+
+        return dist;
+        //distancia = Math.sqrt(Math.pow(this.x2 - this.x1, 2) + Math.pow(this.y2 - this.y1, 2));
     }
 }

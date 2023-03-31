@@ -50,10 +50,7 @@ public class Empleado {
         this.salario = salario;
     }
 
-    @Override
-    public String toString() {
-        return "Empleado{" + "nombre=" + nombre + ", edad=" + edad + ", salario=" + salario + '}';
-    }
+    
 
     public Empleado calcularAumento(Empleado empleado) {
         
