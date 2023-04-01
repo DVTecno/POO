@@ -20,6 +20,7 @@ public class POOEj3Extras {
 
         Juego juego = new Juego();
         juego.iniciarJuego();
+        
     }
 
 }

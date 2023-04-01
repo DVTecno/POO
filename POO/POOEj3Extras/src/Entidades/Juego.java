@@ -28,6 +28,7 @@ public class Juego {
     }
 
     public void iniciarJuego() {
+
         Scanner leer = new Scanner(System.in);
 
         boolean repetirJuego = true;
@@ -53,12 +54,12 @@ public class Juego {
                 }
 
                 intentos++;
-            }
+            }//cierra while interno
             if (!encontrado) {
                 System.out.println("No encontraste el numero en " + numeroIntentos + " intentos");
                 jugador1Ganadas++;
             }
-              System.out.println("--------------------------------------------");
+            System.out.println("--------------------------------------------");
             System.out.print("Quiere volver a jugar? si-no ");
             String respuesta = leer.next();
             if (!respuesta.equalsIgnoreCase("si")) {
@@ -68,7 +69,7 @@ public class Juego {
             System.out.println("Jugador 1 gano " + jugador1Ganadas + " veces");
             System.out.println("Jugador 2 gano " + jugador2Ganadas + " veces");
             System.out.println("--------------------------------------------");
-        }
+        }//cierra llave while principal
 
     }
 

@@ -1,13 +1,10 @@
 package Entidades;
 
-
-
-
-
 import java.util.Scanner;
 
 public class Cuenta {
-private String titular;
+
+    private String titular;
     private double saldo;
 
     public Cuenta() {
@@ -34,7 +31,6 @@ private String titular;
         this.saldo = saldo;
     }
 
-    
     public Cuenta crearCuenta() {
         Scanner leer = new Scanner(System.in);
         Cuenta nuevaCuenta = new Cuenta();
@@ -46,21 +42,25 @@ private String titular;
     }
 
     public void retirarDinero(Cuenta cuenta) {
-        Scanner leer = new Scanner(System.in);
-        System.out.println("Cuanto desea retirar?");
-        double retiro = leer.nextDouble();
-        if (cuenta.getSaldo() < retiro) {
-            System.out.println("No es posible retirar esa cantidad!");
-        } else {
-            cuenta.setSaldo(saldo - retiro);
-        }
+        boolean salida = true;
+        do {
+
+            Scanner leer = new Scanner(System.in);
+            System.out.println("Cuanto desea retirar?");
+            double retiro = leer.nextDouble();
+            if (cuenta.getSaldo() < retiro) {
+                System.out.println("No es posible retirar esa cantidad!");
+                salida = true;
+            } else {
+                cuenta.setSaldo(saldo - retiro);
+                salida=false;
+            }
+        } while (salida);
     }
 
     @Override
     public String toString() {
         return "Cuenta{" + "titular  " + titular + ", saldo = " + saldo + '}';
     }
-    
- 
 
 }

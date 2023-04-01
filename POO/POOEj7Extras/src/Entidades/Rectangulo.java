@@ -18,7 +18,16 @@ public class Rectangulo {
         this.lado2 = lado2;
     }
 
-    public int calcular_area() {
+    public int calcularArea() {
         return lado1 * lado2;
+    }
+
+    public void mostrar() {
+        for (int i = 0; i < lado1; i++) {
+            for (int j = 0; j < lado2; j++) {
+                System.out.print("*  ");
+            }
+            System.out.println("");
+        }
     }
 }

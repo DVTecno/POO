@@ -5,14 +5,11 @@ import Entidades.Empleado;
 public class POOEj6Extras {
 
     /**
-     * Crea una clase "Juego" que tenga un método "iniciar_juego" que permita a
-     * dos jugadores jugar un juego de adivinanza de números. El primer jugador
-     * elige un número y el segundo jugador intenta adivinarlo. El segundo
-     * jugador tiene un número limitado de intentos y recibe una pista de "más
-     * alto" o "más bajo" después de cada intento. El juego termina cuando el
-     * segundo jugador adivina el número o se queda sin intentos. Registra el
-     * número de intentos necesarios para adivinar el número y el número de
-     * veces que cada jugador ha ganado.
+     * Crea una clase "Empleado" que tenga atributos como "nombre", "edad" y
+     * "salario". Luego, crea un método "calcular_aumento" que calcule el
+     * aumento salarial de un empleado en función de su edad y salario actual.
+     * El aumento salarial debe ser del 10% si el empleado tiene más de 30 años
+     * o del 5% si tiene menos de 30 años.
      *
      * @param args
      */
