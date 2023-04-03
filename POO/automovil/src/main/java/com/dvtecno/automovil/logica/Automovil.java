@@ -3,6 +3,7 @@
 package com.dvtecno.automovil.logica;
 
 public class Automovil {
+   
     private int id;
     private String modelo;
     private String marca;
