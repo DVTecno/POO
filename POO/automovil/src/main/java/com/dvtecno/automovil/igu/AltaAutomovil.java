@@ -4,10 +4,10 @@ import com.dvtecno.automovil.logica.Controladora;
 
 public class AltaAutomovil extends javax.swing.JFrame {
 
-    Controladora control = new Controladora();
+    Controladora control;
 
     public AltaAutomovil() {
-        
+        control = new Controladora();
         initComponents();
     }
 
@@ -196,13 +196,13 @@ public class AltaAutomovil extends javax.swing.JFrame {
         String motor = txtMotor.getText();
         String color = txtColor.getText();
         String patente = txtPatente.getText();
-       
+
         String cantPuertasText = txtCantdPuertas.getText();
         int cantPuertas = 0;
         if (!cantPuertasText.isEmpty()) {
             cantPuertas = Integer.parseInt(cantPuertasText);
         }
-
+        control.agregarAuto(modelo, marca, motor, color, patente, cantPuertas);
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
