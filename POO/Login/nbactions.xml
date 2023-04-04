@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>debug.fix</actionName>
+            <displayName>Fix &amp; Continue Debugging</displayName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>compile</goal>
+            </goals>
+            <properties>
+                <jpda.stopclass>${packageClassName}</jpda.stopclass>
+                <Env.JAVA_HOME>C:\Program Files\Java\jdk-20</Env.JAVA_HOME>
+            </properties>
+        </action>
+    </actions>
