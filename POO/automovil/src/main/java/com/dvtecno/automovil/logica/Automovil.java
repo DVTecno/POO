@@ -1,9 +1,17 @@
-
-
 package com.dvtecno.automovil.logica;
 
-public class Automovil {
-   
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Automovil implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String modelo;
     private String marca;
@@ -14,7 +22,7 @@ public class Automovil {
 
     public Automovil() {
     }
-    
+
     public Automovil(int id, String modelo, String marca, String motor, String color, String patente, int cantPuertas) {
         this.id = id;
         this.modelo = modelo;
@@ -24,7 +32,6 @@ public class Automovil {
         this.patente = patente;
         this.cantPuertas = cantPuertas;
     }
-
 
     public int getId() {
         return id;
@@ -81,8 +88,5 @@ public class Automovil {
     public void setCantPuertas(int cantPuertas) {
         this.cantPuertas = cantPuertas;
     }
-    
-    
-    
-    
+
 }

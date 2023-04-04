@@ -1,9 +1,6 @@
-
 package com.dvtecno.automovil;
 
 import com.dvtecno.automovil.igu.Principal;
-
-
 
 public class Automovil {
 
@@ -11,5 +8,6 @@ public class Automovil {
         Principal capaPrincipal = new Principal();
         capaPrincipal.setVisible(true);
         capaPrincipal.setLocationRelativeTo(null);
+
     }
 }
