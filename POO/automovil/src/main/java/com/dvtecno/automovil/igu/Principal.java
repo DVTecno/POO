@@ -58,6 +58,11 @@ public class Principal extends javax.swing.JFrame {
         btnConsulta.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         btnConsulta.setForeground(new java.awt.Color(255, 255, 255));
         btnConsulta.setText("Consuta, Edicion y Baja");
+        btnConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 222, 309, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 0, 0));
@@ -88,34 +93,27 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAltaAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaAutoActionPerformed
-       AltaAutomovil capaPrincipal2 = new AltaAutomovil();
+        AltaAutomovil capaPrincipal2 = new AltaAutomovil();
         capaPrincipal2.setVisible(true);
         capaPrincipal2.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnAltaAutoActionPerformed
 
+    private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
+        ConsultaAuto consulta = new ConsultaAuto();
+        consulta.setVisible(true);
+        consulta.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnConsultaActionPerformed
+
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAltaAuto;
     private javax.swing.JButton btnConsulta;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
