@@ -38,25 +38,35 @@ public class CuentaBancariaServicio {
     }
 
     public void retirarDinero(CuentaBancaria cuentaGold) {
-         System.out.println("------------------------------------------");
+        System.out.println("------------------------------------------");
         System.out.print("Ingrese el monto a retirar: $");
         double ingreso = leer.nextDouble();
         if (ingreso < cuentaGold.getSaldoActual()) {
             cuentaGold.setSaldoActual(cuentaGold.getSaldoActual() - ingreso);
-        }else if(ingreso>cuentaGold.getSaldoActual()&&cuentaGold.getSaldoActual()==0){
-            System.out.println("Sin saldo, busque trabajo!!!: $"+cuentaGold.getSaldoActual());
+        } else if (ingreso > cuentaGold.getSaldoActual() && cuentaGold.getSaldoActual() == 0) {
+            System.out.println("Sin saldo, busque trabajo!!!: $" + cuentaGold.getSaldoActual());
         } else {
-            System.out.println("Solo puede retirar: $"+cuentaGold.getSaldoActual());
-            cuentaGold.setSaldoActual(0);
+            System.out.println("Solo puede retirar: $" + cuentaGold.getSaldoActual());
+            cuentaGold.setSaldoActual(0.0);
         }
         System.out.println("------------------------------------------");
     }
 
     public void extraccionRapida(CuentaBancaria cuentaGold) {
         System.out.println("------------------------------------------------");
-        System.out.println("Metodo extracion rapida del 20% del saldo actual");
-        double extracionRapida=cuentaGold.getSaldoActual()*0.2;
-        System.out.println("Retiro: $"+extracionRapida);
+        System.out.println("Metodo extraccion rapida del 20% del saldo actual");
+
+        double saldoActual = cuentaGold.getSaldoActual();
+        double extraccionRapida = saldoActual * 0.2;
+
+        if (extraccionRapida <= 0.50) {
+
+            System.out.println("Saldo insuficiente para realizar la extracción rápida.");
+        } else {
+            cuentaGold.setSaldoActual(saldoActual - extraccionRapida);
+            System.out.println("Retiro: $" + extraccionRapida);
+        }
+
         System.out.println("------------------------------------------------");
     }
 
