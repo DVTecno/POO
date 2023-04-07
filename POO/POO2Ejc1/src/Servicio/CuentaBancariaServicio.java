@@ -1,10 +1,6 @@
 package Servicio;
 
 /**
- * Realizar una clase llamada CuentaBancaria en el paquete Entidades con los
- * siguientes atributos: numeroCuenta(entero), dniCliente(entero largo),
- * saldoActual. Agregar constructor vacío, con parámetros, getters y setters.
- * Agregar la clase CuentaBancariaServicio en el paquete Servicios que contenga:
  * Método para crear cuenta pidiéndole los datos al usuario. Método
  * ingresar(double): recibe una cantidad de dinero a ingresar y se le sumará al
  * saldo actual. Método retirar(double): recibe una cantidad de dinero a retirar
@@ -15,15 +11,66 @@ package Servicio;
  * saldo disponible en la cuenta. Método consultarDatos: permitirá mostrar todos
  * los datos de la cuenta.
  *
+ *
  */
 import Entidades.CuentaBancaria;
+import java.util.Scanner;
 
 public class CuentaBancariaServicio {
 
-    CuentaBancaria c1 = new CuentaBancaria();
+    Scanner leer = new Scanner(System.in);
+    CuentaBancaria cuenta = new CuentaBancaria();
 
     public CuentaBancaria crearCuenta() {
+        System.out.print("Ingrese el numero de Cuenta: ");
+        cuenta.setNumeroCuenta(leer.nextInt());
+        System.out.print("Ingrese el numero de Dni Cliente: ");
+        cuenta.setDniCliente(leer.nextLong());
 
+        return cuenta;
+    }
+
+    public void ingresarDinero(CuentaBancaria cuentaGold) {
+        System.out.println("------------------------------------------");
+        System.out.print("Ingrese el Saldo Actual: $");
+        cuentaGold.setSaldoActual(leer.nextDouble() + cuentaGold.getSaldoActual());
+        System.out.println("------------------------------------------");
+    }
+
+    public void retirarDinero(CuentaBancaria cuentaGold) {
+         System.out.println("------------------------------------------");
+        System.out.print("Ingrese el monto a retirar: $");
+        double ingreso = leer.nextDouble();
+        if (ingreso < cuentaGold.getSaldoActual()) {
+            cuentaGold.setSaldoActual(cuentaGold.getSaldoActual() - ingreso);
+        }else if(ingreso>cuentaGold.getSaldoActual()&&cuentaGold.getSaldoActual()==0){
+            System.out.println("Sin saldo, busque trabajo!!!: $"+cuentaGold.getSaldoActual());
+        } else {
+            System.out.println("Solo puede retirar: $"+cuentaGold.getSaldoActual());
+            cuentaGold.setSaldoActual(0);
+        }
+        System.out.println("------------------------------------------");
+    }
+
+    public void extraccionRapida(CuentaBancaria cuentaGold) {
+        System.out.println("------------------------------------------------");
+        System.out.println("Metodo extracion rapida del 20% del saldo actual");
+        double extracionRapida=cuentaGold.getSaldoActual()*0.2;
+        System.out.println("Retiro: $"+extracionRapida);
+        System.out.println("------------------------------------------------");
+    }
+
+    public void consultarSaldo(CuentaBancaria cuentaGold) {
+        System.out.println("------------------------------------------");
+        System.out.println("Saldo Actual en la cuenta: $" + cuentaGold.getSaldoActual());
+        System.out.println("------------------------------------------");
+    }
+
+    public void consultarDatos(CuentaBancaria cuentaGold) {
+        System.out.println("------------------------------------------");
+        System.out.println("Numero de cuenta: " + cuentaGold.getNumeroCuenta());
+        System.out.println("Numero de DNI del titular: " + cuentaGold.getDniCliente());
+        System.out.println("------------------------------------------");
     }
 
 }
