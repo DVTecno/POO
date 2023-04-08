@@ -10,7 +10,7 @@ public class POO2Ejc1 {
         CuentaBancariaServicio cuenta1 = new CuentaBancariaServicio();
 
         CuentaBancaria cuentaGold = cuenta1.crearCuenta();
-        Scanner sc = new Scanner(System.in);
+        Scanner leer = new Scanner(System.in);
         int opc;
 
         do {
@@ -24,10 +24,10 @@ public class POO2Ejc1 {
             5. Consultar Datos
             6. Salir
                     """);
-            opc = sc.nextInt();
+            opc = leer.nextInt();
 
             switch (opc) {
-                case 1 -> cuenta1.ingresarDinero(cuentaGold);
+                case 1 -> {cuenta1.ingresarDinero(cuentaGold);}
                 case 2 -> cuenta1.retirarDinero(cuentaGold);
                 case 3 -> cuenta1.extraccionRapida(cuentaGold);
                 case 4 -> cuenta1.consultarSaldo(cuentaGold);
