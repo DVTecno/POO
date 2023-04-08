@@ -2,10 +2,10 @@ package Entidades;
 
 /**
  * Vamos a realizar una clase llamada Raices, donde representaremos los valores
- * de una ecuación de 2º grado. Tendremos los 3 coeficientes como atributos,
- * llamémosles a, b y c. Hay que insertar estos 3 valores para construir el
- * objeto a través de un método constructor. Luego, en RaicesServicio las
- * operaciones que se podrán realizar son las siguientes:
+ * de una ecuaciï¿½n de 2ï¿½ grado. Tendremos los 3 coeficientes como atributos,
+ * llamï¿½mosles a, b y c. Hay que insertar estos 3 valores para construir el
+ * objeto a travï¿½s de un mï¿½todo constructor. Luego, en RaicesServicio las
+ * operaciones que se podrï¿½n realizar son las siguientes:
  *
  * @author veras
  */
@@ -76,9 +76,9 @@ public class Raices {
     public void obtenerRaiz() {
         if (tieneRaiz()) {
             double x = -b / (2 * a);
-            System.out.println("La única solucion es x = " + x);
+            System.out.println("La unica solucion es x = " + x);
         } else {
-            System.out.println("La ecuacion no tiene una única solucion real");
+            System.out.println("La ecuacion no tiene una unica solucion real");
         }
     }
 
