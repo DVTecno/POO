@@ -8,15 +8,15 @@ public class ServicioPersona {
     Scanner leer = new Scanner(System.in);
 
     public Persona crearPersona() {
-        Persona p1 = new Persona();
+        Persona persona = new Persona();
         System.out.print("Ingrse el nombre: ");
-        p1.setNombre(leer.next());
+        persona.setNombre(leer.next());
         System.out.print("Ingrse el apellido: ");
-        p1.setApellido(leer.next());
+        persona.setApellido(leer.next());
         System.out.print("Ingrse el dni: ");
-        p1.setDni(leer.next());
+        persona.setDni(leer.next());
         System.out.println("");
-        return p1;
+        return persona;
     }
 
     public void mostrarPersona(Persona persona1) {
