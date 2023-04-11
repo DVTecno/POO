@@ -7,7 +7,7 @@ private final int capacidadMaxima;
     private  int cantidadActual;
 
     public Cafetera() {
-        this.capacidadMaxima = 1000;
+        this.capacidadMaxima = 1500;
     }
 
     public Cafetera(int capacidadMaxima, int cantidadActual) {

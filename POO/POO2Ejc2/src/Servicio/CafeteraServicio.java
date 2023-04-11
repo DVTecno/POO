@@ -32,7 +32,7 @@ public class CafeteraServicio {
             c1.setCantidadActual(0);
         }
         System.out.println("----------------------------------------------");
-       
+     
     }
 
     public void vaciarCafetera(Cafetera c1) {
