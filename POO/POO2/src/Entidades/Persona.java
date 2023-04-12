@@ -15,6 +15,8 @@ public class Persona {
         this.dni = dni;
     }
 
+   
+
     public String getNombre() {
         return nombre;
     }

@@ -5,25 +5,25 @@ import java.util.Scanner;
 
 public class ServicioPersona {
 
-    Scanner leer = new Scanner(System.in);
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     public Persona crearPersona() {
-        Persona persona = new Persona();
+        
         System.out.print("Ingrse el nombre: ");
-        persona.setNombre(leer.next());
+        String Nombre =leer.next();
         System.out.print("Ingrse el apellido: ");
-        persona.setApellido(leer.next());
+        String Apellido=leer.next();
         System.out.print("Ingrse el dni: ");
-        persona.setDni(leer.next());
+        String Dni=leer.next();
         System.out.println("");
-        return persona;
+        return new Persona(Nombre,Apellido,Dni);
     }
 
-    public void mostrarPersona(Persona persona1) {
+    public void mostrarPersona(Persona persona) {
         System.out.println("-----------------");
-        System.out.println("  Nombre: " + persona1.getNombre());
-        System.out.println("Apellido: " + persona1.getApellido());
-        System.out.println("     DNI: " + persona1.getDni());
+        System.out.println("  Nombre: " + persona.getNombre());
+        System.out.println("Apellido: " + persona.getApellido());
+        System.out.println("     DNI: " + persona.getDni());
         System.out.println("-----------------");
 
     }
