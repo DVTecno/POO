@@ -1,16 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.dvtecno.peluqueria;
+import com.dvtecno.peluqueria.igu.Principal;
 
-/**
- *
- * @author veras
- */
 public class Peluqueria {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+      Principal p1 = new Principal();
+      p1.setVisible(true);
+      p1.setLocationRelativeTo(null);
+     
     }
 }
