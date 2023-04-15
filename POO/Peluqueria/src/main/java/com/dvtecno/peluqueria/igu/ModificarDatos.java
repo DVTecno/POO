@@ -1,5 +1,7 @@
 package com.dvtecno.peluqueria.igu;
+
 public class ModificarDatos extends javax.swing.JFrame {
+
     public ModificarDatos() {
         initComponents();
     }
@@ -85,6 +87,11 @@ public class ModificarDatos extends javax.swing.JFrame {
 
         btnGuardar.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         btnGuardar.setText("Modificar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
@@ -276,6 +283,12 @@ public class ModificarDatos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        Principal p1 = new Principal();
+        p1.setVisible(true);
+        p1.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

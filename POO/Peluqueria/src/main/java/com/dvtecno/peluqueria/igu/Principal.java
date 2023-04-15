@@ -120,6 +120,7 @@ public class Principal extends javax.swing.JFrame {
         CargarDatos p2 = new CargarDatos();
         p2.setVisible(true);
         p2.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_btnCargarDatosActionPerformed
 
     private void btnVerDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDatosActionPerformed

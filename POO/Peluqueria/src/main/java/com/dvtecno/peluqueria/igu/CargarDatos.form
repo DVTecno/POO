@@ -35,7 +35,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="649" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="655" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -58,7 +58,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel2" min="-2" pref="649" max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -73,7 +73,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jPanel3" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="jLabel2" max="32767" attributes="0"/>
@@ -91,16 +91,16 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="jLabel2" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanel3" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" pref="424" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -131,7 +131,7 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" max="32767" attributes="0"/>
+                                  <Component id="txtCellDuenio" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtCelDuenio" min="-2" pref="378" max="-2" attributes="0"/>
                               </Group>
@@ -145,14 +145,14 @@
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel6" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" max="32767" attributes="0"/>
+                                  <Component id="cmbAlergico" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel7" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" max="32767" attributes="0"/>
+                                  <Component id="cmbAtencionEspecial" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -163,13 +163,15 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                  <Component id="btnSalir" max="32767" attributes="0"/>
+                                  <Component id="btnLimpiar" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                                   <Component id="btnGuardar" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -190,13 +192,6 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="390" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -232,7 +227,7 @@
                                   <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                                   <Component id="jLabel6" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jComboBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbAlergico" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -240,7 +235,7 @@
                                   <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                                   <Component id="jLabel7" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jComboBox2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbAtencionEspecial" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -254,25 +249,21 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" max="32767" attributes="0"/>
+                                  <Component id="txtCellDuenio" max="32767" attributes="0"/>
                               </Group>
                               <Component id="txtCelDuenio" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="131" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="30" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnSalir" alignment="3" max="32767" attributes="0"/>
+                              <Component id="btnLimpiar" alignment="3" max="32767" attributes="0"/>
                               <Component id="btnGuardar" alignment="3" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="308" max="-2" attributes="0"/>
-                              <Component id="jLabel10" pref="0" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -326,7 +317,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre Dueno:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="txtCellDuenio">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto Medium" size="14" style="1"/>
@@ -395,13 +386,16 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnSalir">
+                <Component class="javax.swing.JButton" name="btnLimpiar">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto Medium" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Salir"/>
+                    <Property name="text" type="java.lang.String" value="Limpiar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnGuardar">
                   <Properties>
@@ -411,7 +405,7 @@
                     <Property name="text" type="java.lang.String" value="Guardar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="cmbAlergico">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="3">
@@ -425,7 +419,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="cmbAtencionEspecial">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="3">
