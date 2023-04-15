@@ -33,7 +33,7 @@ private char letra;
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("NIF{");
+        sb.append(" NIF{");
         sb.append("DNI=").append(DNI);
         sb.append(", letra=").append(letra);
         sb.append('}');

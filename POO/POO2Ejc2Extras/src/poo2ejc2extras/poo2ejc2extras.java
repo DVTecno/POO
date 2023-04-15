@@ -33,7 +33,7 @@ public class poo2ejc2extras {
         nfs.mostrar(nf1);
         nfs.mostrar(nf2);
         nfs.mostrar(nf3);
-        System.out.println("Nif: " + nf);
+        System.out.println("Nif: " + nf + nf1 + nf2 + nf3);
     }
 
 }
