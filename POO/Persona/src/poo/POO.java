@@ -18,7 +18,9 @@ public class POO {
         persona1.setDni(leerNum.nextInt());
         System.out.print("Ingrese Edad: ");
         persona1.setEdad(leerNum.nextInt());
+
         System.out.println("---------------------------------");
+
         Persona persona2 = new Persona();
         System.out.print("Persona 2. Ingrese Nombre: ");
         persona2.setNombre(leer.nextLine());
@@ -29,8 +31,11 @@ public class POO {
         System.out.print("Ingrese Edad: ");
         persona2.setEdad(leerNum.nextInt());
 
-        System.out.println("Nombre " + persona1.getNombre() + " Apellido" + persona1.getApellido());
+        System.out.println("---------------------------------");
+
+        System.out.println("Nombre " + persona1.getNombre() + " Apellido " + persona1.getApellido());
         System.out.println("Edad " + persona1.getEdad() + " Dni " + persona1.getDni());
+        System.out.println("---------------------------------");
         System.out.println("Nombre " + persona2.getNombre() + " Apellido " + persona2.getApellido());
         System.out.println("Edad " + persona2.getEdad() + " Dni " + persona2.getDni());
 
