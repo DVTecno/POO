@@ -18,10 +18,10 @@ import java.util.Scanner;
 
 public class CuentaBancariaServicio {
 
-    Scanner leer = new Scanner(System.in);
-    CuentaBancaria cuenta = new CuentaBancaria();
+    private Scanner leer = new Scanner(System.in);
 
     public CuentaBancaria crearCuenta() {
+        CuentaBancaria cuenta = new CuentaBancaria();
         System.out.print("Ingrese el numero de Cuenta: ");
         cuenta.setNumeroCuenta(leer.nextInt());
         System.out.print("Ingrese el numero de Dni Cliente: ");
@@ -60,13 +60,12 @@ public class CuentaBancariaServicio {
         double extraccionRapida = saldoActual * 0.2;
 
         if (extraccionRapida <= 0.50) {
-
             System.out.println("Saldo insuficiente para realizar la extracción rápida.");
         } else {
             cuentaGold.setSaldoActual(saldoActual - extraccionRapida);
             System.out.println("Retiro: $" + extraccionRapida);
         }
-
+        
         System.out.println("------------------------------------------------");
     }
 
