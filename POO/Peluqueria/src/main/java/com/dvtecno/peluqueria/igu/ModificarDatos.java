@@ -1,9 +1,21 @@
 package com.dvtecno.peluqueria.igu;
 
+import com.dvtecno.peluqueria.logica.Controladora;
+import com.dvtecno.peluqueria.logica.Mascota;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 public class ModificarDatos extends javax.swing.JFrame {
 
-    public ModificarDatos() {
+    Controladora control = null;
+    //private int num_cliente;
+
+    public ModificarDatos(int num_cliente) {
+        control = new Controladora();
+        //this.num_cliente = num_cliente; // es reemplazado por la linea 15 al cargarDatos a traves de un metodo y pasar su id
         initComponents();
+        caragarDatos(num_cliente);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -32,8 +44,8 @@ public class ModificarDatos extends javax.swing.JFrame {
         txtCelDuenio = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbAlergico = new javax.swing.JComboBox<>();
+        cmbAtencionEspecial = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,9 +105,9 @@ public class ModificarDatos extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
+        cmbAlergico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
+        cmbAtencionEspecial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -117,13 +129,13 @@ public class ModificarDatos extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbAlergico, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(306, 306, 306))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbAtencionEspecial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(242, 242, 242))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
@@ -183,13 +195,13 @@ public class ModificarDatos extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbAlergico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbAtencionEspecial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -284,6 +296,7 @@ public class ModificarDatos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
         Principal p1 = new Principal();
         p1.setVisible(true);
         p1.setLocationRelativeTo(null);
@@ -294,8 +307,8 @@ public class ModificarDatos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> cmbAlergico;
+    private javax.swing.JComboBox<String> cmbAtencionEspecial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -317,4 +330,42 @@ public class ModificarDatos extends javax.swing.JFrame {
     private javax.swing.JTextArea txtObservaciones;
     private javax.swing.JTextField txtRaza;
     // End of variables declaration//GEN-END:variables
+
+    private void caragarDatos(int num_cliente) {
+        Mascota mascota = control.traerMascota(num_cliente);
+        txtNombre.setText(mascota.getNombre());
+        txtRaza.setText(mascota.getRaza());
+        txtColor.setText(mascota.getColor());
+        txtNombreDuenio.setText(mascota.getUnDuenio().getNombre());
+        txtCelDuenio.setText(mascota.getUnDuenio().getCellDuenio());
+        txtObservaciones.setText(mascota.getObservaciones());
+        if (mascota.getAlergico().equals("Si")) {
+            cmbAlergico.setSelectedIndex(1);
+        } else if (mascota.getAlergico().equals("No")) {
+            cmbAlergico.setSelectedIndex(2);
+        } else {
+            cmbAlergico.setSelectedIndex(0);
+        }
+        if (mascota.getAtencionEspecial().equals("SI")) {
+            cmbAtencionEspecial.setSelectedIndex(1);
+        } else if (mascota.getAtencionEspecial().equals("NO")) {
+            cmbAtencionEspecial.setSelectedIndex(2);
+        } else {
+            cmbAtencionEspecial.setSelectedIndex(0);
+        }
+
+        
+    }
+
+    public void mostrarMensaje(String mensaje, String tipo, String titulo) {
+        JOptionPane optionPane = new JOptionPane(mensaje);
+        if (tipo.equals("Info")) {
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        } else if (tipo.equals("Error")) {
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+    }
 }

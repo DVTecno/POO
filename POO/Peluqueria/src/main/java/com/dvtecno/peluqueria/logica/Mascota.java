@@ -2,7 +2,8 @@
 
 package com.dvtecno.peluqueria.logica;
 
-import javax.persistence.Basic;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity//permite mapear la clase al marcarla como una entidad y se puede crear la clase como una tabla
-public class Mascota {
+public class Mascota implements Serializable {
     @Id //marca como id y va siempre por encima delo que selecciono como id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)// Genera el id secuencialmente
     private int numCliente;
@@ -22,7 +23,7 @@ public class Mascota {
     private String atencionEspecial;
     private String observaciones;
     @OneToOne//es tipo de relacion uno a uno, aqui se marca
-    private Duenio unDuenio;
+    private Duenio unDuenio;//esta se usara para la relacion entre el duenio y la mascota luego en la controladora linea 21 de la controladora
 
     public Mascota() {
     }

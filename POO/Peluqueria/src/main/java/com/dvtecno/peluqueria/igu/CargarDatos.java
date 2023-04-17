@@ -1,6 +1,15 @@
 package com.dvtecno.peluqueria.igu;
+
+import com.dvtecno.peluqueria.logica.Controladora;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 public class CargarDatos extends javax.swing.JFrame {
+
+    Controladora control;
+
     public CargarDatos() {
+        control = new Controladora();
         initComponents();
     }
 
@@ -19,7 +28,7 @@ public class CargarDatos extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtCellDuenio = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtObservaciones = new javax.swing.JTextArea();
@@ -59,8 +68,8 @@ public class CargarDatos extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         jLabel8.setText("Nombre Dueno:");
 
-        txtCellDuenio.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        txtCellDuenio.setText("Cell Dueno:");
+        jLabel66.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel66.setText("Cell Dueno:");
 
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         jLabel10.setText("Observaciones:");
@@ -90,6 +99,11 @@ public class CargarDatos extends javax.swing.JFrame {
 
         btnGuardar.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         cmbAlergico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI", "NO" }));
 
@@ -103,7 +117,7 @@ public class CargarDatos extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtCellDuenio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCelDuenio, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -195,7 +209,7 @@ public class CargarDatos extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(txtCellDuenio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(txtCelDuenio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,17 +290,42 @@ public class CargarDatos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-       txtNombre.setText("");
-       txtRaza.setText("");
-       txtColor.setText("");
-       txtNombreDuenio.setText("");
-       txtCelDuenio.setText("");
-       txtObservaciones.setText("");
-       cmbAlergico.setSelectedIndex(0);
-       cmbAtencionEspecial.setSelectedIndex(0);
+        txtNombre.setText("");
+        txtRaza.setText("");
+        txtColor.setText("");
+        txtNombreDuenio.setText("");
+        txtCelDuenio.setText("");
+        txtObservaciones.setText("");
+        cmbAlergico.setSelectedIndex(0);
+        cmbAtencionEspecial.setSelectedIndex(0);
+        mostrarMensaje("Se limpio correctamente","Info","Borrado Exitoso");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // se recibe de los campos los datos(interfaz grafica) y se envian como argumento a la funcion
+        String color = txtColor.getText();
+        String alergico = (String) cmbAlergico.getSelectedItem();//se castean por que los combos devuelven objeto asi que se castea a string
+        String atencionEspecial = (String) cmbAtencionEspecial.getSelectedItem();//para este item es igual
 
+        String observaciones = txtObservaciones.getText();
+
+        String nombreDuenio = txtNombreDuenio.getText();
+
+        control.guardar(txtNombre.getText(), txtRaza.getText(), color, alergico, atencionEspecial, observaciones, nombreDuenio, txtCelDuenio.getText());
+        mostrarMensaje("Se guardo correctamente","Info","Guardado Exitoso");
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
+    public void mostrarMensaje(String mensaje, String tipo, String titulo) {
+        JOptionPane optionPane = new JOptionPane(mensaje);
+        if (tipo.equals("Info")) {
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        } else if (tipo.equals("Error")) {
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
@@ -300,6 +339,7 @@ public class CargarDatos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
@@ -307,7 +347,6 @@ public class CargarDatos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCelDuenio;
-    private javax.swing.JLabel txtCellDuenio;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombreDuenio;
