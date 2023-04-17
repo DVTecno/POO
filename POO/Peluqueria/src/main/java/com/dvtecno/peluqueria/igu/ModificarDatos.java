@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 public class ModificarDatos extends javax.swing.JFrame {
 
+    Mascota mascota = null;
     Controladora control = null;
     //private int num_cliente;
 
@@ -49,7 +50,7 @@ public class ModificarDatos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Descarga\\tecnoOo.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Descarga\\apeim-4asu9.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 48)); // NOI18N
@@ -96,6 +97,11 @@ public class ModificarDatos extends javax.swing.JFrame {
 
         btnSalir.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         btnGuardar.setText("Modificar");
@@ -296,12 +302,26 @@ public class ModificarDatos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // se recibe de los campos los datos(interfaz grafica) y se envian como argumento a la funcion
+        String color = txtColor.getText();
+        String alergico = (String) cmbAlergico.getSelectedItem();//se castean por que los combos devuelven objeto asi que se castea a string
+        String atencionEspecial = (String) cmbAtencionEspecial.getSelectedItem();//para este item es igual
+        String observaciones = txtObservaciones.getText();
 
-        Principal p1 = new Principal();
-        p1.setVisible(true);
-        p1.setLocationRelativeTo(null);
+        String nombreDuenio = txtNombreDuenio.getText();
+        control.modificarMascota(mascota, txtNombre.getText(), txtRaza.getText(), color, alergico, atencionEspecial, observaciones, nombreDuenio, txtCelDuenio.getText());
+        
+        mostrarMensaje("Edicion realizada correctamente", "Info", "Edicion Correcta");
+        VerDatos pantalla = new VerDatos();
+        pantalla.setVisible(true);
+        pantalla.setLocationRelativeTo(null);
         this.dispose();
+       
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -332,14 +352,15 @@ public class ModificarDatos extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void caragarDatos(int num_cliente) {
-        Mascota mascota = control.traerMascota(num_cliente);
+        this.mascota = control.traerMascota(num_cliente);
         txtNombre.setText(mascota.getNombre());
         txtRaza.setText(mascota.getRaza());
         txtColor.setText(mascota.getColor());
         txtNombreDuenio.setText(mascota.getUnDuenio().getNombre());
         txtCelDuenio.setText(mascota.getUnDuenio().getCellDuenio());
         txtObservaciones.setText(mascota.getObservaciones());
-        if (mascota.getAlergico().equals("Si")) {
+
+        if (mascota.getAlergico().equals("SI")) {
             cmbAlergico.setSelectedIndex(1);
         } else if (mascota.getAlergico().equals("No")) {
             cmbAlergico.setSelectedIndex(2);
@@ -354,9 +375,9 @@ public class ModificarDatos extends javax.swing.JFrame {
             cmbAtencionEspecial.setSelectedIndex(0);
         }
 
-        
     }
 
+    //metodo para retornar un mensaje donde contiene mensaje, tipo y titulo.
     public void mostrarMensaje(String mensaje, String tipo, String titulo) {
         JOptionPane optionPane = new JOptionPane(mensaje);
         if (tipo.equals("Info")) {
