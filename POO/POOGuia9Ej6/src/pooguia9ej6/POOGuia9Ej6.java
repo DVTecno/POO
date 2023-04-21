@@ -2,7 +2,7 @@ package pooguia9ej6;
 
 import Curso.Curso;
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 public class POOGuia9Ej6 {
 
