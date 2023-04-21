@@ -1,6 +1,4 @@
-
 package com.dvtecno.automovil.igu;
-
 
 public class Principal extends javax.swing.JFrame {
 
@@ -107,7 +105,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAltaAutoActionPerformed
 
     private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
-    
+       
     }//GEN-LAST:event_btnConsultaActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
