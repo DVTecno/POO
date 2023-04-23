@@ -57,4 +57,6 @@ public class Ahorcado {
         this.palabraAux = palabraAux;
     }
 
+    
+
 }
