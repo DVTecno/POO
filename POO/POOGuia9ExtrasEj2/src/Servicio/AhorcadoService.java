@@ -1,6 +1,7 @@
 package Servicio;
 
 import entidades.Ahorcado;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AhorcadoService {
@@ -45,13 +46,11 @@ public class AhorcadoService {
 //ingresada es parte de la palabra o no. También informará si la letra estaba o no.  
 
     public void buscar(Ahorcado ahorcado, String letra) {
-        boolean bandera = false;
         int count = 0;
         for (int i = 0; i < ahorcado.getPalabra().length; i++) {
             if (ahorcado.getPalabra().equals(letra)) {
 
                 count++;
-                bandera = true;
             }
         }
         ahorcado.setCantidadLetrasEncontradas(count);
@@ -74,7 +73,6 @@ public class AhorcadoService {
             if (ahorcado.getPalabra()[i].equalsIgnoreCase(letra)) {
                 if (ahorcado.getPalabraAux()[i].equals("_")) {
                     ahorcado.getPalabraAux()[i] = letra;
-
                     count++;
                     ahorcado.setCantidadLetrasEncontradas(ahorcado.getCantidadLetrasEncontradas() + count);
                 }
@@ -112,8 +110,10 @@ public class AhorcadoService {
         } while (ahorcado.getCantidadJugadasMaximas() != 0 && ahorcado.getCantidadLetrasEncontradas() != ahorcado.getPalabra().length);
         if (ganaste) {
             System.out.println("Ganaste!");
+            System.out.println("La Palabra esta completa: " + Arrays.toString(ahorcado.getPalabraAux()));
 
         } else {
+            System.out.println("Se terminaron los intentos );");
             System.out.println("No encontraste la palabra ):");
         }
 

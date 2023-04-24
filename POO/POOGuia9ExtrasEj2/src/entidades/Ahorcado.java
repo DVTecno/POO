@@ -16,13 +16,15 @@ public class Ahorcado {
 
     public Ahorcado() {
         this.cantidadLetrasEncontradas = 0;
+        this.cantidadJugadasMaximas=0;
+        
     }
 
     public Ahorcado(String[] palabra, int cantidadLetrasEncontradas, int cantidadJugadasMaximas, String[] palabraAux) {
-        this.palabra = palabra;
+        this.palabra = new String [palabra.length];
         this.cantidadLetrasEncontradas = cantidadLetrasEncontradas;
         this.cantidadJugadasMaximas = cantidadJugadasMaximas;
-        this.palabraAux = palabraAux;
+        this.palabraAux = new String [palabra.length];
     }
 
     public String[] getPalabra() {
